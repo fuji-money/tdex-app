@@ -22,9 +22,10 @@ export default function CoinInput({
     const { value } = e.target
     setValue(value)
     setInvalid(isNaN(Number(value)))
-    const amount = isNaN(Number(value)) || value === ''
-      ? undefined
-      : toSatoshis(Number(value), coin.precision)
+    const amount =
+      isNaN(Number(value)) || value === ''
+        ? undefined
+        : toSatoshis(Number(value), coin.precision)
     setAmount(amount)
   }
 
