@@ -27,8 +27,16 @@ const Modal = ({ children, id, reset }: ModalProps) => {
   return (
     <div className="modal" id={id}>
       <div onClick={handleClick} className="modal-background" />
+
       <div className="modal-content box has-background-black">
-        <div style={{ minHeight: '25rem' }}>{children}</div>
+        <div style={{ minHeight: '25rem' }}>
+          <button
+            className="delete is-large"
+            aria-label="close"
+            onClick={handleClick}
+          />
+          {children}
+        </div>
       </div>
     </div>
   )

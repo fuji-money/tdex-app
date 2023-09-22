@@ -21,10 +21,6 @@ const AssetListModal = ({
   const { connected, network } = useContext(WalletContext)
   const { markets } = useContext(TradeContext)
 
-  const handleClose = () => {
-    closeModal(ModalIds.AssetList)
-  }
-
   const handleClick = (a: Coin) => {
     closeModal(ModalIds.AssetList)
     if (side === 'dest') setDestAsset(a)
@@ -43,11 +39,6 @@ const AssetListModal = ({
 
   return (
     <Modal id={ModalIds.AssetList}>
-      <button
-        className="delete is-danger is-large"
-        aria-label="close"
-        onClick={handleClose}
-      />
       <div className="columns">
         <div className="column is-half is-offset-one-quarter">
           <h1 className="title has-text-white">Select an asset</h1>
